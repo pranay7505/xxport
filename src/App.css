@@ -1,17 +1,17 @@
 .bg1-light{
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
 }
 
 
 
 /* Custom text color for navbar items */
 .custom-text-color {
-    color: #fffbfb; /* Replace with the color you want */
+    color: #000000 !important; /* Replace with the color you want */
   }
   
   /* Optional: Change color on hover */
 .custom-text-color:hover {
-    color: #33ebe1;  /* Blue color on hover */
+    color: #33ebe1 !important;  /* Blue color on hover */
   }
   
 .nav-item{
@@ -19,14 +19,41 @@
     font-weight: bold;
   }
 
-.Namecon{
+  @keyframes movingText {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  @keyframes movingText {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .Namecon {
     font-size: 500%;
+    font-weight: bold;
+    background: linear-gradient(45deg, #0038d1, #00eeff, #ffeb00, #32cd32, #0066ff, #8000ff);
+    background-size: 400% 400%;
+  
+    /* Standard + Vendor Prefixes for Compatibility */
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -o-background-clip: text;
+    background-clip: text;
+  
+    -webkit-text-fill-color: transparent; /* For WebKit Browsers */
+    -moz-text-fill-color: transparent;
+    -o-text-fill-color: transparent;
+    
+    /* Apply Animation on Load */
+    animation: movingText 5s infinite linear;
+  }
+  
+.mainfont{
+  font-weight: bold;
 }
-
-.Namecon:hover{
-    color:rgb(224, 71, 0)
-}
-
 
 .skill-item {
     display: flex;
@@ -36,5 +63,90 @@
     text-align: center;
     font-size: 18px;
     font-weight: bold;
+  }
+  
+  @keyframes fire {
+    0% { filter: hue-rotate(0deg); }
+    50% { filter: hue-rotate(20deg); }
+    100% { filter: hue-rotate(0deg); }
+  }
+  
+  .contact-section {
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+  
+  .contact-section::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgb(5, 5, 5), transparent);
+    animation: fire 3s infinite alternate ease-in-out;
+  }
+  
+  .fire-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ff4500;
+    text-shadow: 0 0 10px #ff4500, 0 0 20px #ff6347, 0 0 30px #ff8c00;
+    animation: flicker 1.5s infinite alternate;
+  }
+  
+  @keyframes flicker {
+    0% { opacity: 1; text-shadow: 0 0 10px #ff4500, 0 0 20px #ff6347, 0 0 30px #ff8c00; }
+    50% { opacity: 0.8; text-shadow: 0 0 5px #ff4500, 0 0 10px #ff6347, 0 0 15px #ff8c00; }
+    100% { opacity: 1; text-shadow: 0 0 10px #ff4500, 0 0 20px #ff6347, 0 0 30px #ff8c00; }
+  }
+  
+  .formgt {
+    width: 100%;
+    max-width: 400px;
+    background: rgba(231, 28, 28, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0px 4px 20px rgba(255, 69, 0, 0.6);
+    color: rgb(255, 255, 255);
+    animation: slideUp 1.5s ease-in-out;
+  }
+  
+  @keyframes slideUp {
+    0% { transform: translateY(50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+  
+  .form-control {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: rgb(233, 128, 128);
+  }
+  
+  .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .btn-submit {
+    background: linear-gradient(45deg, #ff4500, #ff6347);
+    color: white;
+    border: none;
+    width: 50%;
+    padding: 10px;
+    border-radius: 8px;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0px 4px 15px rgba(252, 135, 93, 0.6);
+  }
+  
+  .btn-submit:hover {
+    background: linear-gradient(45deg, #ff8c00, #ff4500);
+    transform: scale(1.05);
   }
   

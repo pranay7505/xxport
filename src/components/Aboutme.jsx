@@ -3,8 +3,8 @@ import { FaTwitter, FaLinkedin, FaInstagram, FaYoutube, FaGithub } from "react-i
 
 const Aboutme = () => {
   return (
-    <section className="d-flex flex-column align-items-center justify-content-center text-center vh-100 bg-dark text-white">
-      <h1 className="Namecon">Hi, I'm Pranay Patil</h1>
+    <section className="d-flex flex-column align-items-center justify-content-center text-center vh-100 bg-black text-white">
+      <h1 className="Namecon mainfont">Hi, I'm Pranay Patil</h1>
       <div className="d-flex gap-4 mt-2">
         <a href="#" className="text-white"><FaTwitter size={24} /></a>
         <a href="#" className="text-white"><FaLinkedin size={24} /></a>
