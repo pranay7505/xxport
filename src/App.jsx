@@ -3,6 +3,7 @@ import './App.css'
 import Aboutme from './components/Aboutme'
 import Navbar from './components/Navbar'
 import Skillset from './components/Skillset'
+import CursorFollower from './components/CursorFollower'
 
 function App() {
   
@@ -13,6 +14,7 @@ function App() {
      <Aboutme></Aboutme>
      <Skillset></Skillset>
      <ContactMe></ContactMe>
+     <CursorFollower></CursorFollower>
     </>
   )
 }
