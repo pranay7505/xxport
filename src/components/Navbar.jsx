@@ -1,15 +1,40 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import { MdOutlineDarkMode, MdLightMode } from "react-icons/md";
 
 const Navbar = () => {
-  return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <div className="container-fluid">
-        {/* Navbar Brand */}
-        <a className="navbar-brand" href="#">Pranay</a>
+  const [darkMode, setDarkMode] = useState(() => {
+    return localStorage.getItem("theme") === "dark";
+  });
 
-        {/* Toggle Button for Mobile */}
+  useEffect(() => {
+    const root = document.documentElement;
+    if (darkMode) {
+      root.setAttribute("data-theme", "dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      root.setAttribute("data-theme", "light");
+      localStorage.setItem("theme", "light");
+    }
+  }, [darkMode]);
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <nav className="navbar navbar-expand-lg">
+      <div className="container-fluid px-4">
+        <a className="navbar-brand font-mono" href="#home">
+          &lt;Pranay/&gt;
+        </a>
+
         <button
-          className="navbar-toggler"
+          className="navbar-toggler border-0"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
@@ -20,40 +45,53 @@ const Navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        {/* Navbar Items */}
         <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
           <ul className="navbar-nav">
-            <li className="nav-item me-4">
-              <a className="nav-link custom-text-color" href="#">Home</a>
+            <li className="nav-item">
+              <button className="nav-link btn btn-link" onClick={() => scrollToSection('home')}>
+                Home
+              </button>
             </li>
-
-            {/* DROPDOWN MENU */}
-            <li className="nav-item dropdown me-4">
-              <a
-                className="nav-link dropdown-toggle custom-text-color"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
+            <li className="nav-item">
+              <button className="nav-link btn btn-link" onClick={() => scrollToSection('about')}>
+                About
+              </button>
+            </li>
+            <li className="nav-item">
+              <button className="nav-link btn btn-link" onClick={() => scrollToSection('skills')}>
+                Skills
+              </button>
+            </li>
+            <li className="nav-item">
+              <button className="nav-link btn btn-link" onClick={() => scrollToSection('projects')}>
                 Projects
-              </a>
-              <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a className="dropdown-item" href="#calculator">Calculator</a></li>
-                <li><a className="dropdown-item" href="#portfolio">Portfolio Website</a></li>
-                <li><a className="dropdown-item" href="#other">Other Projects</a></li>
-              </ul>
+              </button>
             </li>
-
-            <li className="nav-item me-4">
-              <a className="nav-link custom-text-color" href="#about">About</a>
+            <li className="nav-item">
+              <button className="nav-link btn btn-link" onClick={() => scrollToSection('experience')}>
+                Experience
+              </button>
             </li>
-            <li className="nav-item me-4">
-              <a className="nav-link custom-text-color" href="#contact">Contact</a>
+            <li className="nav-item">
+              <button className="nav-link btn btn-link" onClick={() => scrollToSection('certifications')}>
+                Certifications
+              </button>
+            </li>
+            <li className="nav-item">
+              <button className="nav-link btn btn-link" onClick={() => scrollToSection('contact')}>
+                Contact
+              </button>
             </li>
           </ul>
         </div>
+
+        <button 
+          className="theme-toggle btn"
+          onClick={() => setDarkMode(!darkMode)}
+          aria-label="Toggle theme"
+        >
+          {darkMode ? <MdLightMode size={20} /> : <MdOutlineDarkMode size={20} />}
+        </button>
       </div>
     </nav>
   );
