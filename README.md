@@ -1,4 +1,4 @@
-# React + Vite
+<img width="1536" height="1024" alt="ChatGPT Image Aug 25, 2025, 10_08_59 PM" src="https://github.com/user-attachments/assets/87599871-308a-4a02-b089-ae6a4ce4ff14" /># React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
@@ -10,3 +10,5 @@ Currently, two official plugins are available:
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+<img width="1536" height="1024" alt="ChatGPT Image Aug 25, 2025, 10_08_59 PM" src="https://github.com/user-attachments/assets/e616eaab-63ae-40b7-8b79-b34820ad63ef" />
